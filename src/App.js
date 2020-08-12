@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
-function App() {
+import { TodoProvider } from './context/TodoContext';
+import { CounterProvider } from './context/CounterContext';
+
+import Nav from './components/Nav';
+import Todo from './components/Todo';
+import TodoDetail from './components/TodoDetail';
+import Counter from './components/Counter';
+import Signup from './components/Signup';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoProvider>
+      <CounterProvider>
+        <Router>
+          <Nav />
+          <Switch>
+            <Route exact path="/auth/signup" component={Signup} />
+            <Route exact path="/todo" component={Todo} />
+            <Route path="/todo/:id" component={TodoDetail} />
+            <Route path="/counter" component={Counter} />
+          </Switch>
+        </Router>
+      </CounterProvider>
+    </TodoProvider>
   );
-}
+};
 
 export default App;
