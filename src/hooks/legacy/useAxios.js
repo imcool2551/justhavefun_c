@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { TodoContext } from '../context/TodoContext';
+import { TodoContext } from '../../context/TodoContext';
 
 const useAxios = (url) => {
   const { fetched, init, addTodo } = useContext(TodoContext);

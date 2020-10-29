@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { TodoContext } from '../context/TodoContext';
+import { TodoContext } from '../../context/TodoContext';
 
 const SearchTodo = () => {
   const { filter, searchTodo } = useContext(TodoContext);

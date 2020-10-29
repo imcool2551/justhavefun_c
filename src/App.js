@@ -6,10 +6,11 @@ import { TodoProvider } from './context/TodoContext';
 import { CounterProvider } from './context/CounterContext';
 
 import Nav from './components/Nav';
-import Todo from './components/Todo';
-import TodoDetail from './components/TodoDetail';
+import TodoApp from './components/TodoApp';
 import Counter from './components/Counter';
 import Signup from './components/Signup';
+import Home from './components/Home';
+import Logout from './components/Logout';
 
 const App = () => {
   return (
@@ -18,9 +19,10 @@ const App = () => {
         <Router>
           <Nav />
           <Switch>
-            <Route exact path="/auth/signup" component={Signup} />
-            <Route exact path="/todo" component={Todo} />
-            <Route path="/todo/:id" component={TodoDetail} />
+            <Route exact path="/" component={Home} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/logout" component={Logout} />
+            <Route path="/todo" component={TodoApp} />
             <Route path="/counter" component={Counter} />
           </Switch>
         </Router>

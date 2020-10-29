@@ -1,24 +1,41 @@
-import React, { useContext, useRef } from 'react';
-import { v4 } from 'uuid';
+import React, { useRef } from 'react';
 
-import { TodoContext } from '../context/TodoContext';
+import { useMutation } from '@apollo/client';
+import { addTodoMutation, myTodosQuery } from '../queries/querie';
 
 const AddTodo = () => {
-  const { addTodo } = useContext(TodoContext);
+  const [createTodo, { data, loading }] = useMutation(addTodoMutation, {
+    update(cache, { data: { addTodo } }) {
+      const { myTodos } = cache.readQuery({ query: myTodosQuery });
+      console.log(myTodos, '@@@');
+      cache.writeQuery({
+        query: myTodosQuery,
+        data: { myTodos: [addTodo, ...myTodos] },
+      });
+    },
+  });
   const todoRef = useRef(null);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    addTodo(v4(), todoRef.current.value);
+    createTodo({
+      variables: { text: todoRef.current.value },
+    });
     todoRef.current.value = '';
     todoRef.current.focus();
+    console.log(data);
   };
 
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <input type="text" placeholder="Add Todo..." ref={todoRef} />
-        <button>Submit</button>
+        <input
+          type="text"
+          placeholder="Add Todo..."
+          ref={todoRef}
+          disabled={loading}
+        />
+        <button disabled={loading}>Submit</button>
       </form>
     </div>
   );
