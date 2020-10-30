@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/justhavefun_c/static/css/main.398726f2.chunk.css",
-    "main.js": "/justhavefun_c/static/js/main.220c5d11.chunk.js",
-    "main.js.map": "/justhavefun_c/static/js/main.220c5d11.chunk.js.map",
+    "main.js": "/justhavefun_c/static/js/main.2adfbdc0.chunk.js",
+    "main.js.map": "/justhavefun_c/static/js/main.2adfbdc0.chunk.js.map",
     "runtime-main.js": "/justhavefun_c/static/js/runtime-main.5c768710.js",
     "runtime-main.js.map": "/justhavefun_c/static/js/runtime-main.5c768710.js.map",
     "static/js/2.e66bb709.chunk.js": "/justhavefun_c/static/js/2.e66bb709.chunk.js",
     "static/js/2.e66bb709.chunk.js.map": "/justhavefun_c/static/js/2.e66bb709.chunk.js.map",
     "index.html": "/justhavefun_c/index.html",
-    "precache-manifest.df2f04a960a03d7c3ac7c70d094fc643.js": "/justhavefun_c/precache-manifest.df2f04a960a03d7c3ac7c70d094fc643.js",
+    "precache-manifest.440cd0d8ff30c061e58b9864ca7cca58.js": "/justhavefun_c/precache-manifest.440cd0d8ff30c061e58b9864ca7cca58.js",
     "service-worker.js": "/justhavefun_c/service-worker.js",
     "static/css/main.398726f2.chunk.css.map": "/justhavefun_c/static/css/main.398726f2.chunk.css.map",
     "static/js/2.e66bb709.chunk.js.LICENSE.txt": "/justhavefun_c/static/js/2.e66bb709.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5c768710.js",
     "static/js/2.e66bb709.chunk.js",
     "static/css/main.398726f2.chunk.css",
-    "static/js/main.220c5d11.chunk.js"
+    "static/js/main.2adfbdc0.chunk.js"
   ]
 }
